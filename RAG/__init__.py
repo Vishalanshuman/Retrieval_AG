@@ -9,10 +9,10 @@ from langchain_community.llms import HuggingFaceHub
 from dotenv import load_dotenv
 
 
-
 load_dotenv()
 
 class RAG:
+
     def __init__(self, pdf_path="resume.pdf", model_name="mistralai/Mixtral-8x7B-Instruct-v0.1", embedding_model="sentence-transformers/all-MiniLM-L6-v2", chunk_size=1000, chunk_overlap=200):
         self.pdf_path = pdf_path
         self.model_name = model_name
@@ -76,7 +76,6 @@ class RAG:
         self.index_documents(documents)
         
         self.setup_retrieval_qa()
-        
         answer = self.ask_question(question)
         return answer
 
