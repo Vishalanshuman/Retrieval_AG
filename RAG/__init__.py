@@ -21,7 +21,7 @@ class RAG:
         self.chunk_overlap = chunk_overlap
         self.vectorstore = None
         self.qa_chain = None
-        self.huggingface_token = os.getenv("HUGGINGFACEHUB_API_TOKEN", "your_token_here")
+        self.huggingface_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
     
     def extract_text_from_pdf(self):
         if not os.path.exists(self.pdf_path):
